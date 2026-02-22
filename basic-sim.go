@@ -1,3 +1,5 @@
+//go:build serial
+
 package main
 
 import (
@@ -55,11 +57,13 @@ func getLastPosition() int {
 }
 
 func main() {
-	fmt.Println("Starting the sim.")
+	fmt.Println("Starting the simulation. Running for a million iterations.")
 
 	lastPosition := make(map[int]int)
 	for i := 0; i < MILLION; i++ {
 		lastPosition[getLastPosition()]++
 	}
-	fmt.Println(lastPosition)
+	for i := 1; i <= 11; i++ {
+		fmt.Printf("Number of times ladybug ended up last at %d is: %d\n", i, lastPosition[i])
+	}
 }
