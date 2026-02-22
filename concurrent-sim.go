@@ -59,6 +59,8 @@ func main() {
 	var wg sync.WaitGroup
 	results := make([]map[int]int, numWorkers)
 
+	start := time.Now()
+
 	for w := 0; w < numWorkers; w++ {
 		wg.Add(1)
 
@@ -92,7 +94,13 @@ func main() {
 		}
 	}
 
+	t := time.Now()
+	elapsed := t.Sub(start)
+
 	for i := 1; i <= 11; i++ {
 		fmt.Printf("Number of times ladybug ended up last at %d is: %d\n", i, finalCombinedPositions[i])
 	}
+
+	fmt.Printf("\n\nTime taken to run all simulations in series is %dms\n", elapsed.Milliseconds())
+
 }

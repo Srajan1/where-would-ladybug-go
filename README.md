@@ -32,3 +32,27 @@ Number of times ladybug ended up last at 10 is: 91150
 Number of times ladybug ended up last at 11 is: 90780
 ```
 As you can see all are pretty similar counts.
+
+Let's add time profiling to our code and see how long it takes to run. Added basic profiling like this
+```golang
+	start := time.Now()
+
+	lastPosition := make(map[int]int)
+	for i := 0; i < MILLION; i++ {
+		lastPosition[getLastPosition()]++
+	}
+
+	t := time.Now()
+	elapsed := t.Sub(start)
+```
+And here's the result
+```
+Time taken to run all simulations in series is 1759ms.
+```
+
+### Concurrent simulations using workers.
+you can find the code in ./concurrent-sim.go. It creates workers depending on how much cores your CPU has and for my M1 macbook air here's how much improvement I got.
+```
+Time taken to run all simulations in series is 340ms
+```
+This is around 6X faster.

@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 var MILLION = 1000000
@@ -59,11 +60,19 @@ func getLastPosition() int {
 func main() {
 	fmt.Println("Starting the simulation. Running for a million iterations.")
 
+	start := time.Now()
+
 	lastPosition := make(map[int]int)
 	for i := 0; i < MILLION; i++ {
 		lastPosition[getLastPosition()]++
 	}
+
+	t := time.Now()
+	elapsed := t.Sub(start)
+
 	for i := 1; i <= 11; i++ {
 		fmt.Printf("Number of times ladybug ended up last at %d is: %d\n", i, lastPosition[i])
 	}
+
+	fmt.Printf("\n\nTime taken to run all simulations in series is %dms\n", elapsed.Milliseconds())
 }
