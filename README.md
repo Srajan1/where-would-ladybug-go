@@ -56,3 +56,11 @@ you can find the code in ./concurrent-sim.go. It creates workers depending on ho
 Time taken to run all simulations in series is 340ms
 ```
 This is around 6X faster.
+
+### More visual sim
+I'm planning to use the bubble tea to make a TUI and simulate this. Will add results soon.
+
+## Why TUI as a visual medium
+* Looks cool
+* Feels cool
+* Is objectively cooler than web based UIs.
