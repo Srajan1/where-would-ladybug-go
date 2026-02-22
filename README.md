@@ -1,4 +1,4 @@
-# Where would the ladybug go
+# Where would the ladybug go (using TUIs)
 Recently the youtuber and mathematics content creator 3Blue1Brown (respect fr 🙏)  shared a puzzle called "[Ladybug Clock puzzle](https://www.youtube.com/shorts/t3jZ2xGOvYg)". The puzzle is pretty straight-forward. 
 
 <img src="readme-assets/puzzle-intro.png" alt="drawing" style="height:200px;"/>
